@@ -1,0 +1,51 @@
+.app {
+  text-align: center;
+  padding: 30px;
+}
+
+.header {
+  margin: 30px 0 20px;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Didot';
+  font-size: 4em;
+  color: #979797;
+  letter-spacing: 1.15px;
+}
+
+.subtitle {
+  font-family: 'Didot';
+  font-size: 1.8em;
+  color: #979797;
+  letter-spacing: 0.38px;
+}
+
+@media screen and (max-width: 420px) {
+  .app {
+    padding: 10px;
+  }
+
+  .header {
+    margin: 10px 0 5px;
+  }
+
+  .title {
+    font-size: 3.5em;
+  }
+
+  .subtitle {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .title {
+    font-size: 3em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+}

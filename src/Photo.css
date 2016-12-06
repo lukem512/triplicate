@@ -1,0 +1,29 @@
+.photo {
+  text-align: center;
+  display: inline;
+}
+
+.photo img {
+  background-color: #d8d8d8;
+  border: 2px solid #979797;
+}
+
+@media screen and (max-width: 420px) {
+  .photo {
+    display: block;
+  }
+
+  .photo img {
+    width: 90% !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .photo {
+    display: block;
+  }
+
+  .photo img {
+    width: 90% !important;
+  }
+}
