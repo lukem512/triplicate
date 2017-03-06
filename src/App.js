@@ -8,7 +8,7 @@ class App extends Component {
       <div className="app">
         {/* This is the title, displayed at the top of the page. */}
         <div className="header">
-          <h1 className="title">Triplicate</h1>
+          <h1 className="title">Trees in Triplicate</h1>
         </div>
 
         {/* These are links to your photographs. Note that these can be the
@@ -20,13 +20,21 @@ class App extends Component {
             title: "Eucalyptus",
             description: "An Oceanic tree in Kew Gardens",
           },
-          "https://i.imgur.com/57fNtrZ.jpg",
-          "https://i.imgur.com/brm3mBl.jpg",
-        ]} />
+          {
+            src: "https://i.imgur.com/57fNtrZ.jpg",
+            title: "Oil-bearing",
+            description: "Eucalyptus oil is prized for it's ability to aid asthma and respiratory illness.",
+          },
+          {
+            src: "https://i.imgur.com/brm3mBl.jpg",
+            title: "Red Hot",
+            description: "Due to it's oils this species is extremely flammable.",
+          },
+        ]} timeout={1000} />
 
         {/* This is displayed beneath your photos. This can be moved if
           desired. */}
-        <p className="subtitle">A selection of images on the same theme</p>
+        <p className="subtitle">A small collection of photographs of the Eucalyptus.</p>
       </div>
     );
   }

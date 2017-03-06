@@ -21,8 +21,8 @@ class Triplicate extends Component {
     return (
       <div className="triplicate">
         {photos.map((photo, i) => {
-          const key = 'photo-' + photo;
           const obj = typeof photo === 'object' ? photo : {src: photo};
+          const key = `photo-${i}`;
           return (<Photo width={this.getLandscapeWidth(photos, margin)}
             margin={margin} key={key} timeout={this.props.timeout}
             src={obj.src} title={obj.title} description={obj.description} />);
