@@ -6,6 +6,35 @@
 .photo img {
   background-color: #d8d8d8;
   border: 2px solid #979797;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.photo .blurb {
+  position: absolute;
+  background-color: #d8d8d8;
+  opacity: 0.8;
+  padding: 10px 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 2;
+  transition: opacity 0.4s ease-out;
+}
+
+.photo .blurb .photo-title {
+  display: block;
+  font-family: 'Didot';
+  font-size: 1.8em;
+  color: #000;
+  letter-spacing: 0.38px;
+}
+
+.photo .blurb .photo-description {
+  display: block;
+  font-family: 'Didot';
+  font-size: 0.8em;
+  color: #000;
+  letter-spacing: 0.22px;
 }
 
 @media screen and (max-width: 420px) {

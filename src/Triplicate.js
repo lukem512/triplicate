@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Photo from './Photo';
 
-const defaultMargin = 7.5
+const defaultMargin = 7.5;
 
 class Triplicate extends Component {
   propTypes: {
@@ -19,10 +19,13 @@ class Triplicate extends Component {
     const margin = this.props.margin || defaultMargin;
     return (
       <div className="triplicate">
-        {photos.map((photo, i) =>
-          <Photo width={this.getLandscapeWidth(photos, margin)}
-            margin={margin + 'px'} key={'photo-' + i} src={photo} />
-        )}
+        {photos.map((photo, i) => {
+          const key = 'photo-' + photo;
+          const obj = typeof photo === 'object' ? photo : {src: photo};
+          return (<Photo width={this.getLandscapeWidth(photos, margin)}
+            margin={margin} key={key}
+            src={obj.src} title={obj.title} description={obj.description} />);
+        })}
       </div>
     );
   }

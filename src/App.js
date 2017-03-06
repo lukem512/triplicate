@@ -14,12 +14,17 @@ class App extends Component {
         {/* These are links to your photographs. To create a new row,
           simply add a new Triplicate element. */}
         <Triplicate photos={[
-          "https://i.imgur.com/qOzvV95.jpg",
+          {
+            src: "https://i.imgur.com/qOzvV95.jpg",
+            title: "Eucalyptus",
+            description: "An Oceanic tree in Kew Gardens",
+          },
           "https://i.imgur.com/57fNtrZ.jpg",
           "https://i.imgur.com/brm3mBl.jpg",
         ]} />
 
-        {/* This is displayed beneath your photos. */}
+        {/* This is displayed beneath your photos. This can be moved if
+          desired. */}
         <p className="subtitle">A selection of images on the same theme</p>
       </div>
     );
