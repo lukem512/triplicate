@@ -18,7 +18,7 @@ class App extends Component {
           {
             src: "https://i.imgur.com/qOzvV95.jpg",
             title: "Eucalyptus",
-            description: "An Oceanic tree in Kew Gardens",
+            description: "An Oceanic tree in Kew Gardens.",
           },
           {
             src: "https://i.imgur.com/57fNtrZ.jpg",
@@ -27,7 +27,7 @@ class App extends Component {
           },
           {
             src: "https://i.imgur.com/brm3mBl.jpg",
-            title: "Red Hot",
+            title: "Red hot",
             description: "Due to it's oils this species is extremely flammable.",
           },
         ]} timeout={1000} />
