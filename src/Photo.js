@@ -28,10 +28,13 @@ const Photo = React.createClass({
       return (<div className="blurb" style={{opacity: 0}} />);
     }
 
-    // Retrieve position from element
+    // Retrieve positions from element and document
     const rect = this.img.getBoundingClientRect();
-    const top = rect.top;
-    const left = rect.left;
+    const body = document.body.getBoundingClientRect();
+
+    // Compute offsets
+    const top = rect.top - body.top;
+    const left = rect.left - body.left;
     const opacity = this.state.showBlurb ? 0.8 : 0;
 
     // Retrieve bounds and deduct 2 for the border
