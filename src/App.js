@@ -11,8 +11,9 @@ class App extends Component {
           <h1 className="title">Triplicate</h1>
         </div>
 
-        {/* These are links to your photographs. To create a new row,
-          simply add a new Triplicate element. */}
+        {/* These are links to your photographs. Note that these can be the
+          source strings or object with optional titles and descriptions.
+          To create a new row, simply add a new Triplicate element. */}
         <Triplicate photos={[
           {
             src: "https://i.imgur.com/qOzvV95.jpg",
