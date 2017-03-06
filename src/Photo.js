@@ -43,8 +43,11 @@ const Photo = React.createClass({
 
   render() {
     const {src, width, height, margin, title, description} = this.props;
+    const clickable = title || description;
+
     return (
       <div className="photo"
+        style={{...(clickable && {cursor: 'pointer'})}}
         onClick={() => this.handleToggleBlurb()}>
         <img src={src} role="presentation" ref={(a) => { this.img = a; }}
           style={{
@@ -52,7 +55,7 @@ const Photo = React.createClass({
             ...(height ? {height} : null),
             ...(margin ? {margin: margin + 'px'} : null),
           }} />
-        {this.img && (title || description) && this.renderOverlay()}
+        {clickable && this.img && this.renderOverlay()}
       </div>
     );
   },
