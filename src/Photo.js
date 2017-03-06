@@ -23,6 +23,11 @@ const Photo = React.createClass({
   renderOverlay() {
     const {title, description, margin} = this.props;
 
+    // Display empty div for initial transition
+    if (!this.img) {
+      return (<div className="blurb" style={{opacity: 0}} />);
+    }
+
     // Retrieve position from element
     const rect = this.img.getBoundingClientRect();
     const top = rect.top;
@@ -55,7 +60,7 @@ const Photo = React.createClass({
             ...(height ? {height} : null),
             ...(margin ? {margin: margin + 'px'} : null),
           }} />
-        {clickable && this.img && this.renderOverlay()}
+        {clickable && this.renderOverlay()}
       </div>
     );
   },
