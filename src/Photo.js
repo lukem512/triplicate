@@ -11,7 +11,7 @@ const Photo = React.createClass({
     margin: React.PropTypes.number,
     title: React.PropTypes.string,
     description: React.PropTypes.string,
-    blurbTimeout: React.PropTypes.number,
+    timeout: React.PropTypes.number,
   },
 
   getInitialState() {
@@ -86,7 +86,7 @@ const Photo = React.createClass({
     if (showBlurb) {
       window.setTimeout(() => {
         return ((d) => this.handleCloseBlurb(d))(tappedAt);
-      }, this.props.blurbTimeout || defaultTimeout);
+      }, this.props.timeout || defaultTimeout);
     }
   }
 });
