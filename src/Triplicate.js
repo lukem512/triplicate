@@ -24,8 +24,7 @@ class Triplicate extends Component {
           const obj = typeof photo === 'object' ? photo : {src: photo};
           const key = `photo-${i}`;
           return (<Photo width={this.getLandscapeWidth(photos, margin)}
-            margin={margin} key={key} timeout={this.props.timeout}
-            src={obj.src} title={obj.title} description={obj.description} />);
+            margin={margin} key={key} timeout={this.props.timeout} {...obj} />);
         })}
       </div>
     );

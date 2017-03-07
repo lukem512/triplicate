@@ -36,6 +36,20 @@
   letter-spacing: 0.22px;
 }
 
+.photo .blurb .location {
+  opacity: 0.6;
+  transition: opacity 0.2s ease-out;
+}
+
+.photo .blurb .location:hover {
+  opacity: 1.0;
+}
+
+.photo .blurb .location img {
+  border-style: none;
+  border: 0;
+}
+
 .photo .blurb .underline {
   text-decoration: underline;
 }

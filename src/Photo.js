@@ -12,6 +12,7 @@ const Photo = React.createClass({
     margin: React.PropTypes.number,
     title: React.PropTypes.string,
     description: React.PropTypes.string,
+    location: React.PropTypes.string,
     timeout: React.PropTypes.number,
   },
 
@@ -21,8 +22,16 @@ const Photo = React.createClass({
     };
   },
 
+  renderLocation() {
+    const latlong = this.props.location.replace(/\s/g, '');
+    const link = 'https://www.google.com/maps/@' + latlong + ',15z';
+    return (<a target="_blank" className="location" href={link}>
+      <img src="./location.png" width={12} role="presentation" />
+    </a>);
+  },
+
   renderOverlay() {
-    const {title, description, margin = 0} = this.props;
+    const {title, description, location, margin = 0} = this.props;
 
     // Display empty div for initial transition
     if (!this.img) {
@@ -48,6 +57,7 @@ const Photo = React.createClass({
         dangerouslySetInnerHTML={{__html: parse(title)}}/>}
         {description && <p className="photo-description"
           dangerouslySetInnerHTML={{__html: parse(description)}} />}
+        {location && this.renderLocation()}
       </div>
     );
   },

@@ -19,6 +19,7 @@ class App extends Component {
             src: "https://i.imgur.com/qOzvV95.jpg",
             title: "Eucalyptus",
             description: "An *Oceanic* tree in _Kew Gardens_.",
+            location: '51.4823816, -0.2891944',
           },
           {
             src: "https://i.imgur.com/57fNtrZ.jpg",
@@ -30,7 +31,7 @@ class App extends Component {
             title: "Red hot",
             description: "Due to it's oils this species is extremely flammable.",
           },
-        ]} timeout={1000} />
+        ]} timeout={3000} />
 
         {/* This is displayed beneath your photos. This can be moved if
           desired. */}
