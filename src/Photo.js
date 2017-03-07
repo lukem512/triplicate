@@ -21,7 +21,7 @@ const Photo = React.createClass({
   },
 
   renderOverlay() {
-    const {title, description, margin} = this.props;
+    const {title, description, margin = 0} = this.props;
 
     // Display empty div for initial transition
     if (!this.img) {
@@ -37,9 +37,9 @@ const Photo = React.createClass({
     const left = rect.left - body.left;
     const opacity = this.state.showBlurb ? 0.8 : 0;
 
-    // Retrieve bounds and deduct 2 for the border
+    // Retrieve bounds and deduct 2 for the border, 10 for the padding
     const width = rect.width - margin - 2;
-    const maxHeight = rect.height - margin - 2;
+    const maxHeight = rect.height - margin - 2 - 10;
 
     return (
       <div className="blurb" style={{top, left, width, opacity, maxHeight}}>
