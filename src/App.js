@@ -18,12 +18,12 @@ class App extends Component {
           {
             src: "https://i.imgur.com/qOzvV95.jpg",
             title: "Eucalyptus",
-            description: "An Oceanic tree in Kew Gardens.",
+            description: "An *Oceanic* tree in _Kew Gardens_.",
           },
           {
             src: "https://i.imgur.com/57fNtrZ.jpg",
             title: "Oil-bearing",
-            description: "Eucalyptus oil is prized for it's ability to aid asthma and respiratory illness.",
+            description: "*Eucalyptus* oil is famed for it's ability to aid asthma and respiratory illness.",
           },
           {
             src: "https://i.imgur.com/brm3mBl.jpg",

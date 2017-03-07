@@ -36,6 +36,14 @@
   letter-spacing: 0.22px;
 }
 
+.photo .blurb .underline {
+  text-decoration: underline;
+}
+
+.photo .blurb .strike {
+  text-decoration: line-through;
+}
+
 @media screen and (max-width: 420px) {
   .photo {
     display: block;

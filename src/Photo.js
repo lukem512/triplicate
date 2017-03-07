@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from './simplemd';
 import './Photo.css';
 
 const defaultTimeout = 3000;
@@ -43,8 +44,10 @@ const Photo = React.createClass({
 
     return (
       <div className="blurb" style={{top, left, width, opacity, maxHeight}}>
-        {title && <h1 className="photo-title">{title}</h1>}
-        {description && <p className="photo-description">{description}</p>}
+        {title && <h1 className="photo-title"
+        dangerouslySetInnerHTML={{__html: parse(title)}}/>}
+        {description && <p className="photo-description"
+          dangerouslySetInnerHTML={{__html: parse(description)}} />}
       </div>
     );
   },
