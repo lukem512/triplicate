@@ -3,6 +3,8 @@ import parse from './simplemd';
 import './Photo.css';
 
 const defaultTimeout = 3000;
+const minIconWidth = 12;
+const animTime = 400;
 
 const Photo = React.createClass({
   propTypes: {
@@ -22,11 +24,10 @@ const Photo = React.createClass({
     };
   },
 
-  renderLocation() {
-    const latlong = this.props.location.replace(/\s/g, '');
-    const link = 'https://www.google.com/maps/@' + latlong + ',15z';
-    return (<a target="_blank" className="location" href={link}>
-      <img src="./location.png" width={12} role="presentation" />
+  renderLocation(width = '12px') {
+    return (<a target="_blank" className="location"
+      onClick={this.handleTapLocation}>
+      <img src="./location.png" style={{width}} alt="Show location" />
     </a>);
   },
 
@@ -51,13 +52,17 @@ const Photo = React.createClass({
     const width = rect.width - margin - 2;
     const maxHeight = rect.height - margin - 2 - 10;
 
+    const fivePercent = Math.ceil(width / 20);
+    const iconWidth = Math.max(fivePercent, minIconWidth);
+
     return (
       <div className="blurb" style={{top, left, width, opacity, maxHeight}}>
         {title && <h1 className="photo-title"
         dangerouslySetInnerHTML={{__html: parse(title)}}/>}
         {description && <p className="photo-description"
           dangerouslySetInnerHTML={{__html: parse(description)}} />}
-        {location && this.renderLocation()}
+        {location &&
+          this.renderLocation(iconWidth + 'px')}
       </div>
     );
   },
@@ -70,7 +75,8 @@ const Photo = React.createClass({
       <div className="photo"
         style={{...(clickable && {cursor: 'pointer'})}}
         onClick={() => this.handleToggleBlurb()}>
-        <img src={src} role="presentation" ref={(a) => { this.img = a; }}
+        <img className="img" src={src} alt={title || ''} role="presentation"
+          ref={(a) => { this.img = a; }}
           style={{
             ...(width ? {width} : null),
             ...(height ? {height} : null),
@@ -100,6 +106,16 @@ const Photo = React.createClass({
       window.setTimeout(() => {
         return ((d) => this.handleCloseBlurb(d))(tappedAt);
       }, this.props.timeout || defaultTimeout);
+    }
+  },
+
+  handleTapLocation() {
+    const latlong = this.props.location.replace(/\s/g, '');
+    const link = 'https://www.google.com/maps/@' + latlong + ',15z';
+
+    const isFinishedAnimating = (new Date() - this.state.tappedAt) > animTime;
+    if (this.state.showBlurb && isFinishedAnimating) {
+      window.open(link, '_blank');
     }
   }
 });

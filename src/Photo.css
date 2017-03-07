@@ -12,7 +12,7 @@
 .photo .blurb {
   position: absolute;
   background-color: #d8d8d8;
-  opacity: 0;
+  opacity: 0.8;
   padding: 10px 5px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -39,6 +39,7 @@
 .photo .blurb .location {
   opacity: 0.6;
   transition: opacity 0.2s ease-out;
+  cursor: pointer;
 }
 
 .photo .blurb .location:hover {
@@ -63,7 +64,7 @@
     display: block;
   }
 
-  .photo img {
+  .photo .img {
     width: 90% !important;
   }
 }
@@ -73,7 +74,7 @@
     display: block;
   }
 
-  .photo img {
+  .photo .img {
     width: 90% !important;
   }
 }
