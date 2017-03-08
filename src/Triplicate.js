@@ -6,8 +6,8 @@ const defaultMargin = 7.5;
 class Triplicate extends Component {
   propTypes: {
     photos: React.PropTypes.array.isRequired,
+    height: React.PropTypes.string,
     margin: React.PropTypes.number,
-    height: React.PropTypes.number,
     timeout: React.PropTypes.number,
   }
 
