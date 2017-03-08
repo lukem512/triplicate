@@ -1,17 +1,13 @@
 .photo {
   text-align: center;
   display: inline;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .photo img {
   background-color: #d8d8d8;
   border: 2px solid #979797;
   z-index: 1;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-.photo img:active {
-  box-shadow: 1px 1px 2px 2px #d8d8d8;
 }
 
 .photo .blurb {
