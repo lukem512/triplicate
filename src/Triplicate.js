@@ -7,12 +7,13 @@ class Triplicate extends Component {
   propTypes: {
     photos: React.PropTypes.array.isRequired,
     margin: React.PropTypes.number,
+    height: React.PropTypes.number,
     timeout: React.PropTypes.number,
   }
 
   getLandscapeWidth(photos, margin) {
     const width = (100 - (margin * photos.length)) / photos.length;
-    return width.toFixed(2) + '%';
+    return width.toFixed(2) + 'vw';
   }
 
   render() {
@@ -24,7 +25,8 @@ class Triplicate extends Component {
           const obj = typeof photo === 'object' ? photo : {src: photo};
           const key = `photo-${i}`;
           return (<Photo width={this.getLandscapeWidth(photos, margin)}
-            margin={margin} key={key} timeout={this.props.timeout} {...obj} />);
+            margin={margin} key={key} timeout={this.props.timeout}
+            height={this.props.height} {...obj} />);
         })}
       </div>
     );

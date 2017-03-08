@@ -71,7 +71,10 @@
   }
 
   .photo .img {
-    width: 90% !important;
+    width: auto !important;
+    max-width: 90% !important;
+    height: auto !important;
+    max-height: auto !important;
   }
 }
 
@@ -81,6 +84,9 @@
   }
 
   .photo .img {
-    width: 90% !important;
+    width: auto !important;
+    max-width: 90% !important;
+    height: auto !important;
+    max-height: auto !important;
   }
 }

@@ -68,7 +68,8 @@ const Photo = React.createClass({
   },
 
   render() {
-    const {src, width, height, margin, title, description} = this.props;
+    const {src, margin, title, description, width: maxWidth, height: maxHeight}
+      = this.props;
     const clickable = title || description;
 
     return (
@@ -77,8 +78,8 @@ const Photo = React.createClass({
         <img className="img" src={src} alt={title || ''} role="presentation"
           ref={(a) => { this.img = a; }}
           style={{
-            ...(width && {width}),
-            ...(height && {height}),
+            ...(maxWidth && {maxWidth}),
+            ...(maxHeight && {maxHeight}),
             ...(margin && {margin: margin + 'px'})
           }} />
         {clickable && this.renderOverlay()}
