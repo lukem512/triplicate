@@ -9,14 +9,14 @@
 
 .title {
   margin: 0;
-  font-family: 'Didot';
+  font-family: 'Didot', 'GFS Didot', serif;
   font-size: 4em;
   color: #979797;
   letter-spacing: 1.15px;
 }
 
 .subtitle {
-  font-family: 'Didot';
+  font-family: 'Didot', 'GFS Didot', serif;
   font-size: 1.8em;
   color: #979797;
   letter-spacing: 0.38px;

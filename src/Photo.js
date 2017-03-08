@@ -72,16 +72,16 @@ const Photo = React.createClass({
     const clickable = title || description;
 
     return (
-      <div className="photo"
-        style={{...(clickable && {cursor: 'pointer'})}}
-        onClick={() => this.handleToggleBlurb()}>
+      <div className="photo">
         <img className="img" src={src} alt={title || ''} role="presentation"
           ref={(a) => { this.img = a; }}
           style={{
-            ...(width ? {width} : null),
-            ...(height ? {height} : null),
-            ...(margin ? {margin: margin + 'px'} : null),
-          }} />
+            ...(width && {width}),
+            ...(height && {height}),
+            ...(margin && {margin: margin + 'px'}),
+            ...(clickable && {cursor: 'pointer'})
+          }}
+          onClick={() => this.handleToggleBlurb()}/>
         {clickable && this.renderOverlay()}
       </div>
     );

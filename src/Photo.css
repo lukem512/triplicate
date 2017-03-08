@@ -7,6 +7,11 @@
   background-color: #d8d8d8;
   border: 2px solid #979797;
   z-index: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.photo img:active {
+  box-shadow: 1px 1px 2px 2px #d8d8d8;
 }
 
 .photo .blurb {
@@ -20,9 +25,13 @@
   transition: opacity 0.4s ease-out;
 }
 
+.photo .blurb::-webkit-scrollbar {
+  display: none;
+}
+
 .photo .blurb .photo-title {
   display: block;
-  font-family: 'Didot';
+  font-family: 'Didot', 'GFS Didot', serif;
   font-size: 1.8em;
   color: #000;
   letter-spacing: 0.38px;
@@ -30,7 +39,7 @@
 
 .photo .blurb .photo-description {
   display: block;
-  font-family: 'Didot';
+  font-family: 'Didot', 'GFS Didot', serif;
   font-size: 0.8em;
   color: #000;
   letter-spacing: 0.22px;
@@ -42,7 +51,8 @@
   cursor: pointer;
 }
 
-.photo .blurb .location:hover {
+.photo .blurb .location:hover,
+.photo .blurb .location:active,{
   opacity: 1.0;
 }
 
