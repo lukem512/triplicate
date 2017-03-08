@@ -22,8 +22,7 @@
   letter-spacing: 0.38px;
   text-align: center;
   max-width: 90vw;
-  margin: 0 auto;
-  margin-top: 2vh;
+  margin: 2vh auto;
 }
 
 @media screen and (max-width: 420px) {
