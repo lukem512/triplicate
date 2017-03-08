@@ -74,6 +74,8 @@ const Photo = React.createClass({
 
     return (
       <div className="photo" onClick={() => this.handleToggleBlurb()}
+        onMouseLeave={() => this.handleSetBlurbTimeout()}
+        onMouseEnter={() => this.handleResetBlurbTimeout()}
         style={{...(clickable && {cursor: 'pointer'})}}>
         <img className="img" src={src} alt={title || ''} role="presentation"
           ref={(a) => { this.img = a; }}
@@ -87,26 +89,40 @@ const Photo = React.createClass({
     );
   },
 
-  handleCloseBlurb(expectedTappedAt) {
-    if (expectedTappedAt === this.state.tappedAt && this.state.showBlurb) {
-      this.handleToggleBlurb();
+  handleCloseBlurb(expectedInteractedAt) {
+    if (expectedInteractedAt === this.state.interactedAt
+      && this.state.showBlurb) {
+      this.setState({
+        showBlurb: false,
+        interactedAt: new Date(),
+      });
     }
   },
 
   handleToggleBlurb() {
-    const tappedAt = new Date();
-    const showBlurb = !this.state.showBlurb;
-
     this.setState({
-      showBlurb,
-      tappedAt,
+      showBlurb: !this.state.showBlurb,
+      interactedAt: new Date(),
     });
+  },
 
-    if (showBlurb) {
+  handleSetBlurbTimeout() {
+    const interactedAt = new Date();
+    this.setState({interactedAt});
+
+    if (this.state.showBlurb) {
       window.setTimeout(() => {
-        return ((d) => this.handleCloseBlurb(d))(tappedAt);
+        return ((d) => {
+          this.handleCloseBlurb(d);
+        })(interactedAt);
       }, this.props.timeout || defaultTimeout);
     }
+  },
+
+  handleResetBlurbTimeout() {
+    this.setState({
+      interactedAt: new Date(),
+    });
   },
 
   handleTapLocation() {

@@ -32,7 +32,7 @@ class App extends Component {
 
         {/* This is the component that displays your photos.
           To create a new row, simply add a new Triplicate element. */}
-        <Triplicate photos={photos} height='60vh' timeout={3000} />
+        <Triplicate photos={photos} height='60vh' timeout={1000} />
 
         {/* This is displayed beneath your photos. This can be moved if
           desired. */}
