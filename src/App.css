@@ -1,6 +1,6 @@
 .app {
   text-align: center;
-  padding: 5vh;
+  padding: 5vh 5vw;
 }
 
 .header {
@@ -20,6 +20,9 @@
   font-size: 1.8em;
   color: #979797;
   letter-spacing: 0.38px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 2vh;
 }
 
 @media screen and (max-width: 420px) {
